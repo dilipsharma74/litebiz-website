@@ -5,8 +5,12 @@ function setLang(lang){
   if(frBtn) frBtn.classList.toggle('active', lang === 'fr');
   if(enBtn) enBtn.classList.toggle('active', lang === 'en');
   if(window.PAGE_TITLE && window.PAGE_TITLE[lang]){ document.title = window.PAGE_TITLE[lang]; }
+  try{ localStorage.setItem('litebiz_lang', lang); }catch(e){}
 }
-setLang('fr');
+// The <head> already set the correct lang from localStorage (avoids a flash of
+// French before this script runs) — just sync the toggle buttons/title to it.
+var initialLang = document.getElementById('htmlRoot').getAttribute('lang') || 'en';
+setLang(initialLang);
 
 function toggleMenu(){
   var nav = document.getElementById('mainNav');
