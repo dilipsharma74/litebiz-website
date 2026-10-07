@@ -27,3 +27,37 @@ document.addEventListener('click', function(e){
 
 var yearEls = document.querySelectorAll('.js-year');
 for(var i=0;i<yearEls.length;i++){ yearEls[i].textContent = new Date().getFullYear(); }
+
+// ---- enquiry / demo request form: posts to the app's /api/enquiry endpoint ----
+(function(){
+  var form = document.getElementById('enquiryForm');
+  if(!form) return;
+  var ENDPOINT = 'https://app.litebizerp.com/api/enquiry';
+  var ok = document.getElementById('enqOk'), err = document.getElementById('enqErr'),
+      invalid = document.getElementById('enqInvalid'), btn = document.getElementById('enquirySubmit');
+  function hideAll(){ ok.hidden = err.hidden = invalid.hidden = true; }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    hideAll();
+    var f = form.elements;
+    var kind = form.querySelector('input[name=kind]:checked').value;
+    var data = {
+      name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
+      company: f.company.value.trim(), message: f.message.value.trim(), kind: kind,
+      lang: document.getElementById('htmlRoot').getAttribute('lang') || 'en',
+      website: f.website.value
+    };
+    var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email);
+    if(!data.name || !emailOk || (kind === 'contact' && !data.message)){ invalid.hidden = false; return; }
+    btn.disabled = true;
+    fetch(ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)})
+      .then(function(r){ return r.json().then(function(j){ return {status:r.status, body:j}; }); })
+      .then(function(res){
+        btn.disabled = false;
+        if(res.body && res.body.ok){ form.reset(); ok.hidden = false; }
+        else if(res.status === 400){ invalid.hidden = false; }
+        else { err.hidden = false; }
+      })
+      .catch(function(){ btn.disabled = false; err.hidden = false; });
+  });
+})();

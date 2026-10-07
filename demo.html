@@ -71,11 +71,30 @@
         </div>
       </div>
     </div>
-    <div class="panel" style="text-align:center;padding:40px 28px;">
-      <div class="feature-icon" style="margin:0 auto 18px;width:52px;height:52px;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-      <h3 style="font-size:19px;margin-bottom:10px;"><span data-lang="fr">Prêt à réserver un créneau ?</span><span data-lang="en">Ready to book a time?</span></h3>
-      <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:22px;"><span data-lang="fr">Écrivez-nous et indiquez deux ou trois créneaux qui vous conviennent — nous confirmons par retour.</span><span data-lang="en">Write to us with two or three time slots that work for you — we'll confirm by return.</span></p>
-      <a href="mailto:contact@litebizerp.com?subject=Demande%20de%20d%C3%A9monstration%20LiteBiz%20ERP" class="btn btn-primary btn-lg" style="width:100%;margin-bottom:12px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <span data-lang="fr">Demander une démo par email</span><span data-lang="en">Request a demo by email</span></a>
+    <div class="panel enquiry-panel" id="contact">
+      <h3 style="font-size:19px;margin-bottom:8px;"><span data-lang="fr">Écrivez-nous</span><span data-lang="en">Get in touch</span></h3>
+      <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:18px;"><span data-lang="fr">Demandez une démo ou posez-nous une question — nous vous répondons directement par email.</span><span data-lang="en">Request a demo or ask us a question — we reply to you directly by email.</span></p>
+      <form id="enquiryForm" class="enquiry-form" novalidate>
+        <div class="kind-toggle">
+          <label><input type="radio" name="kind" value="demo" checked> <span data-lang="fr">Demander une démo</span><span data-lang="en">Request a demo</span></label>
+          <label><input type="radio" name="kind" value="contact"> <span data-lang="fr">Poser une question</span><span data-lang="en">Ask a question</span></label>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="enqName"><span data-lang="fr">Nom complet</span><span data-lang="en">Full name</span> *</label><input id="enqName" name="name" type="text" maxlength="100" autocomplete="name" required></div>
+          <div class="field"><label for="enqEmail"><span data-lang="fr">Email</span><span data-lang="en">Email</span> *</label><input id="enqEmail" name="email" type="email" maxlength="200" autocomplete="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="enqPhone"><span data-lang="fr">Téléphone / WhatsApp</span><span data-lang="en">Phone / WhatsApp</span></label><input id="enqPhone" name="phone" type="tel" maxlength="40" autocomplete="tel"></div>
+          <div class="field"><label for="enqCompany"><span data-lang="fr">Entreprise</span><span data-lang="en">Company</span></label><input id="enqCompany" name="company" type="text" maxlength="120" autocomplete="organization"></div>
+        </div>
+        <div class="field"><label for="enqMessage"><span data-lang="fr">Message</span><span data-lang="en">Message</span></label><textarea id="enqMessage" name="message" rows="4" maxlength="4000"></textarea></div>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-field">
+        <button type="submit" class="btn btn-primary btn-lg" id="enquirySubmit" style="width:100%;"><span data-lang="fr">Envoyer</span><span data-lang="en">Send</span></button>
+        <div class="form-status ok" id="enqOk" role="status" hidden><span data-lang="fr">Merci ! Votre message a bien été envoyé. Nous vous répondons très prochainement.</span><span data-lang="en">Thank you! Your message has been sent. We'll get back to you shortly.</span></div>
+        <div class="form-status err" id="enqErr" role="alert" hidden><span data-lang="fr">L'envoi n'a pas abouti. Merci de réessayer, ou écrivez-nous directement à <a href="mailto:contact@litebizerp.com">contact@litebizerp.com</a>.</span><span data-lang="en">We couldn't send your message. Please try again, or email us directly at <a href="mailto:contact@litebizerp.com">contact@litebizerp.com</a>.</span></div>
+        <div class="form-status err" id="enqInvalid" role="alert" hidden><span data-lang="fr">Merci d'indiquer votre nom et une adresse email valide (et un message si vous posez une question).</span><span data-lang="en">Please enter your name and a valid email address (and a message if you're asking a question).</span></div>
+      </form>
+      <hr class="enquiry-sep">
       <a href="assets/LiteBiz-ERP-Brochure-FR.pdf" data-lang="fr" class="btn btn-lg" style="width:100%;" download><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Télécharger la brochure</a>
       <a href="assets/LiteBiz-ERP-Brochure-EN.pdf" data-lang="en" class="btn btn-lg" style="width:100%;" download><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download brochure</a>
       <div class="panel-caption" style="margin-top:16px;"><span data-lang="fr">contact@litebizerp.com &middot; Kinshasa, RDC</span><span data-lang="en">contact@litebizerp.com &middot; Kinshasa, DRC</span></div>

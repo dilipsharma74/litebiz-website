@@ -216,3 +216,31 @@ footer{border-top:1px solid var(--border);padding-block:36px;margin-top:20px;}
 .footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;}
 .footer-links a:hover{color:var(--text);}
 .footer-copy{font-size:12px;color:var(--text-faint);}
+
+/* ---- enquiry / demo request form ---- */
+.enquiry-panel{padding:26px 24px;}
+.enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.enquiry-form .field{margin-bottom:12px;}
+.enquiry-form label{display:block;font-size:12.5px;font-weight:600;color:var(--text-muted);margin-bottom:5px;}
+.enquiry-form input[type=text],.enquiry-form input[type=email],.enquiry-form input[type=tel],.enquiry-form textarea{
+  width:100%;padding:10px 12px;border-radius:9px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:400 14px/1.4 'IBM Plex Sans',sans-serif;}
+.enquiry-form textarea{resize:vertical;min-height:90px;}
+.enquiry-form input:focus,.enquiry-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.enquiry-form .kind-toggle{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:14px;}
+.enquiry-form .kind-toggle label{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:13.5px;color:var(--text);cursor:pointer;}
+.enquiry-form .kind-toggle input{accent-color:var(--accent);}
+.enquiry-form .hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+.enquiry-form button[disabled]{opacity:.6;cursor:wait;}
+.form-status{margin-top:12px;padding:11px 14px;border-radius:9px;font-size:13.5px;line-height:1.45;}
+.form-status[hidden]{display:none;}
+.form-status.ok{background:var(--accent-soft);color:var(--accent-soft-text);}
+.form-status.err{background:#fdecec;color:#9b1c1c;}
+.form-status.err a{color:inherit;font-weight:600;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .form-status.err{background:#3a1717;color:#f5b5b5;}}
+.enquiry-sep{border:0;border-top:1px solid var(--border);margin:22px 0 18px;}
+@media (max-width:520px){.enquiry-form .form-row{grid-template-columns:1fr;}}
+/* brochure buttons inside the enquiry panel: full width, but only the one for the active language */
+html[lang="fr"] .enquiry-panel a.btn[data-lang="fr"],
+html[lang="en"] .enquiry-panel a.btn[data-lang="en"]{display:flex;}
+.enquiry-panel a.btn[data-lang]{margin-bottom:8px;}
+.enquiry-form .kind-toggle label{font-weight:500;}
