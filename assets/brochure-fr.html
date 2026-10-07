@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>LiteBiz ERP — Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  @page{ size:A4; margin:0; }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'IBM Plex Sans',sans-serif;color:#101815;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .pad{padding:16mm 16mm;}
+
+  /* ---- cover page ---- */
+  .cover{background:#f6faf7;}
+  .cover-top{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:9px;}
+  .logo-mark{display:flex;align-items:flex-end;gap:3px;}
+  .logo-mark i{display:block;width:7px;border-radius:2px;}
+  .logo-mark i:nth-child(1){height:13px;background:#8fd6ae;}
+  .logo-mark i:nth-child(2){height:21px;background:#166534;}
+  .logo-mark i:nth-child(3){height:29px;background:#0d3a1e;}
+  .logo-word{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;}
+  .logo-word b{font-family:'IBM Plex Sans',sans-serif;font-weight:600;color:#166534;margin-left:3px;}
+  .tagline-tag{font:700 10px/1 'IBM Plex Sans';letter-spacing:.08em;text-transform:uppercase;color:#166534;background:#e4f5ea;padding:6px 11px;border-radius:20px;}
+
+  .cover-hero{margin-top:46mm;}
+  .cover-hero h1{font-family:'Sora',sans-serif;font-weight:700;font-size:34px;line-height:1.16;margin:0 0 14px;max-width:150mm;}
+  .cover-hero p{font-size:13.5px;color:#5c6b62;max-width:120mm;line-height:1.6;margin:0;}
+
+  .cover-flow{position:absolute;left:16mm;right:16mm;bottom:58mm;display:flex;align-items:center;gap:0;}
+  .cf-step{flex:1;text-align:center;}
+  .cf-badge{width:34px;height:34px;border-radius:10px;background:#fff;border:1.4px solid #166534;display:flex;align-items:center;justify-content:center;margin:0 auto 7px;font:700 13px 'Sora';color:#166534;}
+  .cf-step div.lbl{font-size:9.5px;font-weight:600;color:#101815;}
+  .cf-arrow{flex:none;width:16px;color:#8b978f;font-size:14px;padding-bottom:20px;}
+
+  .cover-footer{position:absolute;left:0;right:0;bottom:0;background:#101815;padding:9mm 16mm;display:flex;align-items:center;justify-content:space-between;}
+  .cover-footer .item{color:#e9f0ec;font-size:11px;}
+  .cover-footer .item b{color:#3fb573;font-weight:600;}
+
+  /* ---- page 2 ---- */
+  .p2{background:#ffffff;}
+  .p2-head{margin-bottom:7mm;}
+  .p2-eyebrow{font:700 10px/1 'IBM Plex Sans';letter-spacing:.07em;text-transform:uppercase;color:#166534;margin-bottom:6px;}
+  .p2-head h2{font-family:'Sora',sans-serif;font-weight:700;font-size:21px;margin:0;}
+
+  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-bottom:9mm;}
+  .feat{border:1px solid #e0e7e2;border-radius:10px;padding:9px 12px;}
+  .feat h3{font-family:'Sora',sans-serif;font-size:12.5px;font-weight:700;margin:0 0 4px;color:#101815;}
+  .feat p{font-size:10.5px;color:#5c6b62;margin:0;line-height:1.45;}
+
+  .why-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6mm;margin-bottom:9mm;}
+  .why-item .num{font-family:'IBM Plex Mono';font-size:10.5px;font-weight:600;color:#166534;margin-bottom:5px;}
+  .why-item h3{font-family:'Sora',sans-serif;font-size:12.5px;font-weight:700;margin:0 0 4px;}
+  .why-item p{font-size:10.5px;color:#5c6b62;margin:0;line-height:1.45;}
+
+  .quote{background:#f0f5f1;border-left:3px solid #166534;border-radius:8px;padding:10px 14px;margin-bottom:9mm;}
+  .quote p{font-size:11.5px;font-style:italic;color:#101815;margin:0 0 4px;}
+  .quote .who{font-size:9.5px;color:#5c6b62;font-style:normal;}
+
+  .cta{background:linear-gradient(155deg,#166534,#134e2c);border-radius:14px;padding:14mm 14mm;color:#fff;text-align:center;}
+  .cta h2{font-family:'Sora',sans-serif;font-size:19px;margin:0 0 7px;}
+  .cta p{font-size:11.5px;color:rgba(255,255,255,.85);margin:0 0 11px;}
+  .cta .contacts{display:flex;justify-content:center;gap:22px;font-size:11.5px;font-weight:600;}
+
+  .p2-footer{position:absolute;left:16mm;right:16mm;bottom:11mm;display:flex;justify-content:space-between;font-size:9px;color:#8b978f;}
+</style>
+</head>
+<body>
+
+<div class="page cover pad">
+  <div class="cover-top">
+    <div class="logo"><span class="logo-mark"><i></i><i></i><i></i></span><span class="logo-word">LiteBiz<b>ERP</b></span></div>
+    <div class="tagline-tag">Logiciel de gestion d'entreprise</div>
+  </div>
+
+  <div class="cover-hero">
+    <h1>La gestion d'entreprise, pensée pour votre réalité.</h1>
+    <p>LiteBiz ERP réunit vos achats, votre stock, vos ventes, votre trésorerie multi-devises et vos rapports dans un seul outil — conçu à Kinshasa pour les entreprises commerciales d'Afrique centrale, et non adapté après coup d'un logiciel occidental.</p>
+  </div>
+
+  <div class="cover-flow">
+    <div class="cf-step"><div class="cf-badge">1</div><div class="lbl">Achats &amp;<br>fournisseurs</div></div>
+    <div class="cf-arrow">→</div>
+    <div class="cf-step"><div class="cf-badge">2</div><div class="lbl">Réception &amp;<br>stock</div></div>
+    <div class="cf-arrow">→</div>
+    <div class="cf-step"><div class="cf-badge">3</div><div class="lbl">Ventes &amp;<br>point de vente</div></div>
+    <div class="cf-arrow">→</div>
+    <div class="cf-step"><div class="cf-badge">4</div><div class="lbl">Encaissement</div></div>
+    <div class="cf-arrow">→</div>
+    <div class="cf-step"><div class="cf-badge">5</div><div class="lbl">Finances &amp;<br>rapports</div></div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="item"><b>Web</b> &nbsp; app.litebizerp.com</div>
+    <div class="item"><b>Contact</b> &nbsp; contact@litebizerp.com</div>
+    <div class="item"><b>Basé à</b> &nbsp; Kinshasa, RDC</div>
+  </div>
+</div>
+
+<div class="page p2 pad">
+  <div class="p2-head">
+    <div class="p2-eyebrow">Ce que fait LiteBiz ERP</div>
+    <h2>Six modules, une seule source de vérité</h2>
+  </div>
+
+  <div class="feat-grid">
+    <div class="feat"><h3>Achats &amp; fournisseurs</h3><p>Bons de commande, réception, historique fournisseur et coûts d'achat centralisés.</p></div>
+    <div class="feat"><h3>Stock multi-dépôts</h3><p>Suivi en temps réel entre entrepôts, points de vente et succursales, sans feuilles Excel séparées.</p></div>
+    <div class="feat"><h3>Ventes &amp; point de vente</h3><p>Facturation rapide en comptoir ou en gros, avec mise à jour immédiate du stock.</p></div>
+    <div class="feat"><h3>Finances complètes</h3><p>Trésorerie, créances, dettes fournisseurs et rapprochement, sans double saisie.</p></div>
+    <div class="feat"><h3>Multi-devises natif</h3><p>USD et CDF gérés nativement dans chaque transaction — pas un module ajouté après coup.</p></div>
+    <div class="feat"><h3>Rapports clairs</h3><p>Marge, rotation de stock et performance par entrepôt, lisibles par un non-comptable.</p></div>
+  </div>
+
+  <div class="p2-head">
+    <div class="p2-eyebrow">Pourquoi LiteBiz ERP</div>
+    <h2>Construit pour votre marché, pas adapté après coup</h2>
+  </div>
+
+  <div class="why-row">
+    <div class="why-item"><div class="num">01</div><h3>Pensé pour votre marché</h3><p>Conçu directement pour une entreprise commerciale de Kinshasa — pas une version simplifiée d'un logiciel européen.</p></div>
+    <div class="why-item"><div class="num">02</div><h3>Multi-devises dès le premier jour</h3><p>USD/CDF ne sont pas une case à cocher : chaque écran, chaque rapport les gère nativement.</p></div>
+    <div class="why-item"><div class="num">03</div><h3>Accompagnement humain</h3><p>Mise en route accompagnée par une équipe qui connaît déjà les réalités du terrain local.</p></div>
+  </div>
+
+  <div class="quote">
+    <p>« LiteBiz ERP a démarré comme un outil interne pour gérer notre propre entreprise commerciale à Kinshasa. Aujourd'hui, nous l'ouvrons à d'autres entreprises qui vivent les mêmes contraintes. »</p>
+    <div class="who">— Équipe fondatrice, LiteBiz ERP</div>
+  </div>
+
+  <div class="cta">
+    <h2>Prêt à voir LiteBiz ERP avec vos propres données ?</h2>
+    <p>Réservez une démonstration gratuite de 30 minutes, sans engagement.</p>
+    <div class="contacts">
+      <span>contact@litebizerp.com</span>
+      <span>app.litebizerp.com</span>
+    </div>
+  </div>
+
+  <div class="p2-footer">
+    <span>LiteBiz ERP — Kinshasa, RDC</span>
+    <span>litebizerp.com</span>
+  </div>
+</div>
+
+</body>
+</html>
